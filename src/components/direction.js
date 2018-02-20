@@ -83,10 +83,10 @@ export default {
       this.$directionsService = new google.maps.DirectionsService();
       this.$directionsRenderer = new google.maps.DirectionsRenderer();
       this.$directionsRenderer.setMap(this.$map);
-      if (this.panel) this.$directionsRenderer.setPanel(this.panel);
       const renderDirections = (results, status) => {
         if (status === 'OK') {
           this.$directionsRenderer.setDirections(results);
+          if (this.panel) this.$directionsRenderer.setPanel(this.panel);
           this.$directionCreatedDeferred.resolve();
         } else {
           this.$directionCreatedDeferred.reject();

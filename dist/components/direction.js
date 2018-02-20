@@ -104,10 +104,10 @@ exports.default = {
       _this2.$directionsService = new google.maps.DirectionsService();
       _this2.$directionsRenderer = new google.maps.DirectionsRenderer();
       _this2.$directionsRenderer.setMap(_this2.$map);
-      if (_this2.panel) _this2.$directionsRenderer.setPanel(_this2.panel);
       var renderDirections = function renderDirections(results, status) {
         if (status === 'OK') {
           _this2.$directionsRenderer.setDirections(results);
+          if (_this2.panel) _this2.$directionsRenderer.setPanel(_this2.panel);
           _this2.$directionCreatedDeferred.resolve();
         } else {
           _this2.$directionCreatedDeferred.reject();
