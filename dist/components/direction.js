@@ -35,7 +35,7 @@ var props = {
     type: String
   },
   panel: {
-    type: Object
+    type: HTMLDivElement
   }
 };
 
