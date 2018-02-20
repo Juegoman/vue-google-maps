@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.MountableMixin = exports.Autocomplete = exports.MapElementMixin = exports.PlaceInput = exports.Map = exports.InfoWindow = exports.Rectangle = exports.Circle = exports.Polygon = exports.Polyline = exports.Cluster = exports.Marker = exports.loaded = exports.load = undefined;
+exports.Direction = exports.MountableMixin = exports.Autocomplete = exports.MapElementMixin = exports.PlaceInput = exports.Map = exports.InfoWindow = exports.Rectangle = exports.Circle = exports.Polygon = exports.Polyline = exports.Cluster = exports.Marker = exports.loaded = exports.load = undefined;
 exports.install = install;
 
 var _manager = require('./manager.js');
@@ -31,6 +31,10 @@ var _circle2 = _interopRequireDefault(_circle);
 var _rectangle = require('./components/rectangle');
 
 var _rectangle2 = _interopRequireDefault(_rectangle);
+
+var _direction = require('./components/direction');
+
+var _direction2 = _interopRequireDefault(_direction);
 
 var _infoWindow = require('./components/infoWindow.vue');
 
@@ -82,6 +86,7 @@ exports.PlaceInput = _placeInput2.default;
 exports.MapElementMixin = _mapElementMixin2.default;
 exports.Autocomplete = _autocomplete2.default;
 exports.MountableMixin = _mountableMixin2.default;
+exports.Direction = _direction2.default;
 function install(Vue, options) {
   options = Object.assign({}, {
     installComponents: true
@@ -113,5 +118,6 @@ function install(Vue, options) {
     Vue.component('GmapAutocomplete', _autocomplete2.default);
     Vue.component('GmapPlaceInput', _placeInput2.default);
     Vue.component('GmapStreetViewPanorama', _streetViewPanorama2.default);
+    Vue.component('GmapDirections', _direction2.default);
   }
 }

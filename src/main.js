@@ -5,6 +5,7 @@ import Polyline from './components/polyline';
 import Polygon from './components/polygon';
 import Circle from './components/circle';
 import Rectangle from './components/rectangle';
+import Direction from './components/direction';
 
 // Vue component imports
 import InfoWindow from './components/infoWindow.vue';
@@ -20,7 +21,7 @@ import {DeferredReady} from './utils/deferredReady';
 // export everything
 export {load, loaded, Marker, Cluster, Polyline, Polygon, Circle, Rectangle,
   InfoWindow, Map, PlaceInput, MapElementMixin, Autocomplete,
-  MountableMixin};
+  MountableMixin, Direction};
 
 export function install(Vue, options) {
   options = Object.assign({}, {
@@ -53,5 +54,6 @@ export function install(Vue, options) {
     Vue.component('GmapAutocomplete', Autocomplete);
     Vue.component('GmapPlaceInput', PlaceInput);
     Vue.component('GmapStreetViewPanorama', StreetViewPanorama);
+    Vue.component('GmapDirections', Direction);
   }
 }
