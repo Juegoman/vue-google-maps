@@ -62,6 +62,14 @@ export default {
     }
   },
 
+  watch: {
+    panel (panel) {
+      if (this.$directionsRenderer) {
+        this.$directionsRenderer.setPanel(panel);
+      }
+    }
+  },
+
   methods: {
     renderDirections (results, status) {
       if (status === 'OK') {
