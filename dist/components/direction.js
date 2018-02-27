@@ -95,7 +95,6 @@ exports.default = {
         this.$directionsRenderer.setDirections(results);
       } else {
         this.$emit('directionsError', status);
-        throw new Error(status);
       }
     }
   },
