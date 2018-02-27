@@ -74,7 +74,10 @@ export default {
     renderDirections (results, status) {
       if (status === 'OK') {
         this.$directionsRenderer.setDirections(results);
-      } else throw new Error(status);
+      } else {
+        this.$emit('directionsError', status);
+        throw new Error(status);
+      }
     }
   },
 
