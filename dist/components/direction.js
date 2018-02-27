@@ -95,6 +95,7 @@ exports.default = {
         this.$directionsRenderer.setDirections(results);
       } else {
         this.$emit('directionsError', status);
+        throw new Error(status);
       }
     }
   },
@@ -112,6 +113,7 @@ exports.default = {
           if (_this2.panel) _this2.$directionsRenderer.setPanel(_this2.panel);
           _this2.$directionCreatedDeferred.resolve();
         } else {
+          _this2.$emit('directionsError', status);
           _this2.$directionCreatedDeferred.reject();
           throw new Error(status);
         }
